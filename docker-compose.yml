@@ -28,6 +28,11 @@ services:
     depends_on:
       - db
       - redis
+      - solr
+  solr:
+    image: solr:7.2-alpine
+    volumes:
+      - /opt/solr/server/solr/mycores
   db:
     image: postgres:alpine
   redis:
